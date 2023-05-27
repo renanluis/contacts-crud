@@ -74,12 +74,12 @@ class ContactController extends Controller
      */
     public function update(UpdateContactRequest $request, Contact $contact)
     {
-        $validated = $request->validate([
+        $request->validate([
             'email' => [Rule::unique('contacts')->ignore($contact)],
             'contact' => [Rule::unique('contacts')->ignore($contact)]
         ]);
 
-        $contact->update($validated);
+        $contact->update($request->validated());
         session()->flash('message', 'Contact successfully updated.');
         return view('contacts.edit', ['contact' => $contact]);
     }
