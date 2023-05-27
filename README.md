@@ -9,6 +9,9 @@ A Laravel application to manage contacts.
 - Laravel Breeze
 
 ## Installation
+- Open a terminal or command prompt.
+- Navigate to the root directory of the project.
+- Run the following commands:
 ```bash
 php artisan breeze:install
 npm install
